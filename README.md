@@ -1,8 +1,8 @@
 ***UPDATE BADGE URLS BELOW***
 
-[![Build Status](https://travis-ci.com/internetarchive/iaux-donation-form.svg?branch=master)](https://travis-ci.com/internetarchive/iaux-donation-form)
+[![Build Status](https://travis-ci.com/internetarchive/iaux-typescript-wc-template.svg?branch=master)](https://travis-ci.com/internetarchive/iaux-typescript-wc-template)
 
-[![codecov](https://codecov.io/gh/internetarchive/iaux-donation-form/branch/master/graph/badge.svg)](https://codecov.io/gh/internetarchive/iaux-donation-form)
+[![codecov](https://codecov.io/gh/internetarchive/iaux-typescript-wc-template/branch/master/graph/badge.svg)](https://codecov.io/gh/internetarchive/iaux-typescript-wc-template)
 
 # \<typescript-template>
 
