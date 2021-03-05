@@ -1,12 +1,12 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import { TypescriptTemplate } from '../src/typescript-template';
-import '../typescript-template';
+import type { YourWebComponent } from '../src/your-webcomponent';
+import '../src/your-webcomponent';
 
-describe('TypescriptTemplate', () => {
+describe('YourWebComponent', () => {
   it('has a default title "Hey there" and counter 5', async () => {
-    const el = await fixture<TypescriptTemplate>(
-      html`<typescript-template></typescript-template>`
+    const el = await fixture<YourWebComponent>(
+      html`<your-webcomponent></your-webcomponent>`
     );
 
     expect(el.title).to.equal('Hey there');
@@ -14,8 +14,8 @@ describe('TypescriptTemplate', () => {
   });
 
   it('increases the counter on button click', async () => {
-    const el = await fixture<TypescriptTemplate>(
-      html`<typescript-template></typescript-template>`
+    const el = await fixture<YourWebComponent>(
+      html`<your-webcomponent></your-webcomponent>`
     );
     el.shadowRoot!.querySelector('button')!.click();
 
@@ -23,16 +23,16 @@ describe('TypescriptTemplate', () => {
   });
 
   it('can override the title via attribute', async () => {
-    const el = await fixture<TypescriptTemplate>(
-      html`<typescript-template title="attribute title"></typescript-template>`
+    const el = await fixture<YourWebComponent>(
+      html`<your-webcomponent title="attribute title"></your-webcomponent>`
     );
 
     expect(el.title).to.equal('attribute title');
   });
 
   it('passes the a11y audit', async () => {
-    const el = await fixture<TypescriptTemplate>(
-      html`<typescript-template></typescript-template>`
+    const el = await fixture<YourWebComponent>(
+      html`<your-webcomponent></your-webcomponent>`
     );
 
     await expect(el).shadowDom.to.be.accessible();

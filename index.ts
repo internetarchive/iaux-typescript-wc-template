@@ -1,1 +1,1 @@
-export { TypescriptTemplate } from './src/typescript-template';
+export { YourWebComponent } from './src/your-webcomponent';

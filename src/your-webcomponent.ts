@@ -1,11 +1,12 @@
-import { html, css, LitElement, property } from 'lit-element';
+import { html, css, LitElement, property, customElement } from 'lit-element';
 
-export class TypescriptTemplate extends LitElement {
+@customElement('your-webcomponent')
+export class YourWebComponent extends LitElement {
   static styles = css`
     :host {
       display: block;
       padding: 25px;
-      color: var(--typescript-template-text-color, #000);
+      color: var(--your-webcomponent-text-color, #000);
     }
   `;
 
@@ -19,8 +20,9 @@ export class TypescriptTemplate extends LitElement {
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <h2>${this.title}, Number: ${this.counter}!</h2>
       <button @click=${this.__increment}>increment</button>
+      <slot name="my-slot"> </slot>
     `;
   }
 }
