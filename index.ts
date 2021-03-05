@@ -1,1 +1,1 @@
-export { TypescriptTemplate } from './src/TypescriptTemplate.js';
+export { TypescriptTemplate } from './src/typescript-template';
