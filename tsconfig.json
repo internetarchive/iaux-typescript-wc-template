@@ -16,5 +16,11 @@
     "rootDir": "./",
     "declaration": true
   },
+  "typedocOptions": {
+    "entryPoints": [
+      "index.ts"
+    ],
+    "out": "github-page/docs"
+  },
   "include": ["**/*.ts"]
 }

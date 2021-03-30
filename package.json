@@ -14,10 +14,12 @@
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
     "build": "tsc",
     "prepare": "tsc",
+    "build:page": "snowpack build && typedoc && touch github-page/.nojekyll",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "circular": "madge --circular --extensions ts .",
     "test": "tsc && yarn run lint && yarn run circular && wtr --coverage",
+    "test:fast": "tsc && wtr --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
   },
   "dependencies": {
@@ -39,7 +41,9 @@
     "madge": "^4.0.1",
     "prettier": "^2.0.4",
     "sinon": "^9.2.4",
+    "snowpack": "^3.0.13",
     "tslib": "^2.0.3",
+    "typedoc": "^0.20.30",
     "typescript": "^4.2.3"
   },
   "eslintConfig": {
