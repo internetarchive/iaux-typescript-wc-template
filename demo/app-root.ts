@@ -1,4 +1,4 @@
-import { html, LitElement, customElement } from 'lit-element';
+import { html, css, LitElement, customElement } from 'lit-element';
 import '../src/your-webcomponent';
 
 @customElement('app-root')
@@ -10,4 +10,10 @@ export class AppRoot extends LitElement {
       </your-webcomponent>
     `;
   }
+
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `;
 }
