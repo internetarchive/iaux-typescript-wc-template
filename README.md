@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/internetarchive/iaux-your-webcomponent.svg?branch=master)](https://travis-ci.com/internetarchive/iaux-your-webcomponent) [![codecov](https://codecov.io/gh/internetarchive/iaux-your-webcomponent/branch/master/graph/badge.svg)](https://codecov.io/gh/internetarchive/iaux-your-webcomponent)
+![Build Status](https://github.com/internetarchive/iaux-typescript-wc-template/actions/workflows/ci.yml/badge.svg)
 
 # Internet Archive Typescript WebComponent Template
 
@@ -15,7 +15,6 @@ This is a base template for creating Typescript WebComponents. It is based off o
 3. `README.md` (this file). Update the readme in general, but also the badge URLs
 4. `package.json` Update the name and description
 5. Rename the `your-webcomponent.ts` and its associated `.test` file
-6. Update `.travis.yml` with the proper secure key. See the [Travis docs](https://blog.travis-ci.com/2014-03-13-slack-notifications/) for more information.
 
 ## Local Demo with `web-dev-server`
 ```bash
