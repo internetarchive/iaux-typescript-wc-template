@@ -1,4 +1,5 @@
-import { html, css, LitElement, property, customElement } from 'lit-element';
+import { html, css, LitElement } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
 
 @customElement('your-webcomponent')
 export class YourWebComponent extends LitElement {
