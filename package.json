@@ -1,6 +1,10 @@
 {
   "name": "@internetarchive/your-webcomponent",
   "description": "The Internet Archive Typescript WebComponent template. It is based on the @open-wc template.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/internetarchive/iaux-your-webcomponent.git"
+  },
   "license": "AGPL-3.0-only",
   "author": "Internet Archive",
   "version": "0.0.0",
