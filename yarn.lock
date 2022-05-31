@@ -219,6 +219,18 @@
     is-module "^1.0.0"
     resolve "^1.19.0"
 
+"@rollup/plugin-node-resolve@^13.0.4":
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-13.3.0.tgz#da1c5c5ce8316cef96a2f823d111c1e4e498801c"
+  integrity sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==
+  dependencies:
+    "@rollup/pluginutils" "^3.1.0"
+    "@types/resolve" "1.17.1"
+    deepmerge "^4.2.2"
+    is-builtin-module "^3.1.0"
+    is-module "^1.0.0"
+    resolve "^1.19.0"
+
 "@rollup/pluginutils@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.1.0.tgz#706b4524ee6dc8b103b3c995533e5ad680c02b9b"
@@ -661,7 +673,39 @@
     rollup "^2.58.0"
     whatwg-url "^11.0.0"
 
-"@web/dev-server@^0.1.24", "@web/dev-server@^0.1.28":
+"@web/dev-server-rollup@^0.3.16":
+  version "0.3.17"
+  resolved "https://registry.yarnpkg.com/@web/dev-server-rollup/-/dev-server-rollup-0.3.17.tgz#d64249ca3ac8c71b04a716546f547067b4f5bc02"
+  integrity sha512-Fp8d3QmOi6ctJGAndf93pmcyPBEE7TmsIJ9xd+W+LjXzTVmH4YyOOjZAIXqf9GWjXd0CwquL/OddTZvMzC8jiQ==
+  dependencies:
+    "@rollup/plugin-node-resolve" "^13.0.4"
+    "@web/dev-server-core" "^0.3.16"
+    nanocolors "^0.2.1"
+    parse5 "^6.0.1"
+    rollup "^2.66.1"
+    whatwg-url "^11.0.0"
+
+"@web/dev-server@0.1.31":
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/@web/dev-server/-/dev-server-0.1.31.tgz#b1cc316b64fcd061a8badf06281b7ea1fa26dba2"
+  integrity sha512-FGrnVwnL/pIxak1VZgOgnwcxvP90gx2LmXeU56nvZQ3CWNMAdS1rnQI3jMjMk6FwUt/wnlLk7pl6xGkm6iNwHA==
+  dependencies:
+    "@babel/code-frame" "^7.12.11"
+    "@types/command-line-args" "^5.0.0"
+    "@web/config-loader" "^0.1.3"
+    "@web/dev-server-core" "^0.3.17"
+    "@web/dev-server-rollup" "^0.3.16"
+    camelcase "^6.2.0"
+    command-line-args "^5.1.1"
+    command-line-usage "^6.1.1"
+    debounce "^1.2.0"
+    deepmerge "^4.2.2"
+    ip "^1.1.5"
+    nanocolors "^0.2.1"
+    open "^8.0.2"
+    portfinder "^1.0.28"
+
+"@web/dev-server@^0.1.24":
   version "0.1.28"
   resolved "https://registry.yarnpkg.com/@web/dev-server/-/dev-server-0.1.28.tgz#fcd8a074e71554594361930803dbd0a1380d6d29"
   integrity sha512-964NqgatvFWX7LM8QGlB1XpcJoUQRXZPiEn3XKgDIUSNS6JNCjGfQQ+TfxBlT5KBHYJakDYbTk+sdEeRi2gaLw==
@@ -1011,6 +1055,11 @@ buffer@^5.2.1, buffer@^5.5.0:
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
+
+builtin-modules@^3.0.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-3.3.0.tgz#cae62812b89801e9656336e46223e030386be7b6"
+  integrity sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==
 
 builtin-modules@^3.1.0:
   version "3.2.0"
@@ -2440,6 +2489,13 @@ is-boolean-object@^1.1.0:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
 
+is-builtin-module@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/is-builtin-module/-/is-builtin-module-3.1.0.tgz#6fdb24313b1c03b75f8b9711c0feb8c30b903b00"
+  integrity sha512-OV7JjAgOTfAFJmHZLvpSTb4qi0nIILDV1gWPYDnDJUTNFM5aGlRAhk4QcT8i7TuAleeEV5Fdkqn3t4mS+Q11fg==
+  dependencies:
+    builtin-modules "^3.0.0"
+
 is-callable@^1.1.4, is-callable@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.4.tgz#47301d58dd0259407865547853df6d61fe471945"
@@ -3602,6 +3658,13 @@ rollup@^2.58.0:
   version "2.60.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.60.0.tgz#4ee60ab7bdd0356763f87d7099f413e5460fc193"
   integrity sha512-cHdv9GWd58v58rdseC8e8XIaPUo8a9cgZpnCMMDGZFDZKEODOiPPEQFXLriWr/TjXzhPPmG5bkAztPsOARIcGQ==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+rollup@^2.66.1:
+  version "2.75.4"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.4.tgz#c3518c326c98e508b628a93015a03a276c331f22"
+  integrity sha512-JgZiJMJkKImMZJ8ZY1zU80Z2bA/TvrL/7D9qcBCrfl2bP+HUaIw0QHUroB4E3gBpFl6CRFM1YxGbuYGtdAswbQ==
   optionalDependencies:
     fsevents "~2.3.2"
 
