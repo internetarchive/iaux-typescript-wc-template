@@ -16,5 +16,5 @@
     "rootDir": "./",
     "declaration": true
   },
-  "include": ["src", "test", "index.ts"],
+  "include": ["**/*.ts"]
 }

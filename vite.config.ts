@@ -1,15 +1,15 @@
-import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '',
+  root: './',
   build: {
     outDir: 'ghpages',
     manifest: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: resolve(__dirname, 'demo/index.html'),
       },
     },
   },

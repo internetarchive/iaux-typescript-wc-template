@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import './your-webcomponent';
+import '../src/your-webcomponent';
 
 @customElement('app-root')
 export class AppRoot extends LitElement {
