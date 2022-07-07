@@ -99,11 +99,11 @@ git push origin gh-pages
 
 You can update the current Github Page without pushing a commit by running:
 ```
-yarn run ghpages:deploy
+yarn run ghpages:publish
 ```
 
 This build script does the following, see `package.json`:
-- `ghpages:deploy` 
+- `ghpages:publish` 
   - This executes `ghpages:prepare` in the current branch you are currently working on
     - Note: The branch name is required so that it will not override the whole Github Pages directory 
   - You can check the directories  

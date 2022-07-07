@@ -20,8 +20,8 @@
     "circular": "madge --circular --extensions ts .",
     "test": "tsc && yarn run lint && yarn run circular && wtr --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
-    "ghpages:deploy": "yarn run ghpages:prepare -e $(git branch --show-current)",
-    "ghpages:prepare": "yarn run prepare:ghpages && touch ghpages/.nojekyll && yarn run deploy:gh",
+    "ghpages:publish": "yarn run ghpages:prepare -e $(git branch --show-current)",
+    "ghpages:prepare": "yarn run prepare:ghpages && touch ghpages/.nojekyll && touch ghpages/demo/.nojekyll && yarn run ghpages:generate",
     "ghpages:generate": "gh-pages -t -d ghpages -m \"Build for $(git log --pretty=format:\"%h %an %ai %s\" -n1) [skip ci]\""
   },
   "types": "dist/index.d.ts",
