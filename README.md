@@ -121,7 +121,7 @@ This build script does the following, see `package.json`:
     - Push the commit to `gh-pages` branch that we setup earlier
 
 The live demo app URL from current branch will look something like this: 
-`https://<organization_name_or_username>.github.io/<repo_name>/<branch_name>`
+`https://<organization_name_or_username>.github.io/<repo_name>/<branch_name>/demo`
 
 ## Automatic Deploy of Demo App
 
@@ -134,7 +134,7 @@ Things that trigger automatic site generation:
   - See workflow: `pr-preview.yml`
     - The URL for your Pull Request will be deleted after merging to main but you can update that in the config
   - When you create a Pull Request, if your code passes codecov unit tests, it will be always served live at base URL/pull request number. 
-  - Example: `https://<organization_name_or_username>.github.io/<repo_name>/pr/<pr-number>`
+  - Example: `https://<organization_name_or_username>.github.io/<repo_name>/pr/<pr-number>/demo`
 
 Note: pushing a branch up alone will not trigger site creation. 
 
