@@ -111,7 +111,7 @@ This build script does the following, see `package.json`:
  
 - `ghpages:prepare` 
   - This executes `prepare:ghpages` that scripts that builds the project dependencies and generates `vite` build for it
-  - We use [vite](https://vitejs.dev/) to generate the static assets that we host in Github Pages
+  - We use [vite](https://vitejs.dev/) bundle and generate the static assets that we host in Github Pages
     - See `vite.config.ts` related to this
 
 - `ghpages:generate`
