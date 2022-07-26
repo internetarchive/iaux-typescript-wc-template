@@ -72,7 +72,7 @@ If you customize the configuration a lot, you can consider moving them to indivi
 - then, go to the badge maker page for your repo: `https://app.codecov.io/gh/internetarchive/<repo-name>/settings/badge`
 - copy link & paste into top of README.md
 
-## Steps to setup `gh-pages`
+## Steps to setup `gh-pages` static site generator
 
 Let's start with creating a `gh-pages` branch.
 
@@ -111,7 +111,7 @@ This build script does the following, see `package.json`:
     - You can checkout how it looks like in one of our projects here: [https://github.com/internetarchive/iaux-collection-browser/tree/gh-pages](https://github.com/internetarchive/iaux-collection-browser/tree/gh-pages)
  
 - `ghpages:prepare` 
-  - This executes `prepare:ghpages` that builds the project dependencies and generates `vite` build from it
+  - This executes `ghpages:build` that builds the project dependencies and generates `vite` build from it
   - We use [vite](https://vitejs.dev/) to bundle and generate the static assets that we host in Github Pages
     - See `vite.config.ts` related to this
 

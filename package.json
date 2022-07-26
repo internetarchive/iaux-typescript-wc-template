@@ -12,7 +12,6 @@
   "module": "dist/index.js",
   "scripts": {
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-    "prepare:ghpages": "rimraf ghpages && yarn run prepare && vite build",
     "prepare": "rimraf dist && tsc && husky install",
     "build": "tsc",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
@@ -20,8 +19,9 @@
     "circular": "madge --circular --extensions ts .",
     "test": "tsc && yarn run lint && yarn run circular && wtr --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "ghpages:build": "rimraf ghpages && yarn run prepare && vite build",
     "ghpages:publish": "yarn run ghpages:prepare -e $(git branch --show-current)",
-    "ghpages:prepare": "yarn run prepare:ghpages && touch ghpages/.nojekyll && yarn run ghpages:generate",
+    "ghpages:prepare": "yarn run ghpages:build && touch ghpages/.nojekyll && yarn run ghpages:generate",
     "ghpages:generate": "gh-pages -t -d ghpages -m \"Build for $(git log --pretty=format:\"%h %an %ai %s\" -n1) [skip ci]\""
   },
   "types": "dist/index.d.ts",
