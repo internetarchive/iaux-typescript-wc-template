@@ -25,7 +25,7 @@ jobs:
         run: yarn install
   
       - name: Create build files for gh-pages deploy
-        run: yarn prepare:ghpages
+        run: yarn ghpages:build
 
       # Reference: https://github.com/JamesIves/github-pages-deploy-action
       - name: Deploy 🚀
