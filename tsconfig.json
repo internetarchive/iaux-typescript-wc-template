@@ -15,7 +15,12 @@
     "inlineSources": true,
     "rootDir": "./",
     "declaration": true,
-    "importsNotUsedAsValues": "error"
+    "importsNotUsedAsValues": "error",
+    "plugins": [
+      {
+        "name": "ts-lit-plugin"
+      }
+    ]
   },
   "include": ["**/*.ts"]
 }
