@@ -11,10 +11,10 @@ This is a base template for creating Typescript WebComponents. It is based off o
 
 ### Things to update in your copy
 1. Remove this section
-2. Search for the strings `iaux-account-settings` and `IAUXAccountSettings` and those are most of the spots that need to be updated.
+2. Search for the strings `your-webcomponent` and `YourWebComponent` and those are most of the spots that need to be updated.
 3. `README.md` (this file). Update the readme in general, but also the badge URLs
 4. `package.json` Update the name and description
-5. Rename the `iaux-account-settings.ts` and its associated `.test` file
+5. Rename the `your-webcomponent.ts` and its associated `.test` file
 
 ## Local Demo with `web-dev-server`
 ```bash
@@ -142,22 +142,3 @@ Things that trigger automatic site generation:
 Another thing to note: pushing a branch up alone will not trigger site creation. 
 
 Happy devving ^_^ 🥳  🎉 
-
-
-Dev:
-
-// this.fieldValidator = new IAUXFieldValidator({
-//   email: this.email,
-//   screenname: this.screenname,
-//   password: this.password,
-// });
-
-// const emailRes = await this.fieldValidator?.emailValidation();
-// if (emailRes?.status === false) {
-//   this.emailError = emailRes.error;
-// }
-
-// const screennameRes = await this.fieldValidator?.emailValidation();
-// if (screennameRes?.status === false) {
-//   this.screennameError = screennameRes.error;
-// }
