@@ -1,9 +1,9 @@
 {
-  "name": "@internetarchive/your-webcomponent",
+  "name": "@internetarchive/iaux-account-settings",
   "description": "The Internet Archive Typescript WebComponent template. It is based on the @open-wc template.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/internetarchive/iaux-your-webcomponent.git"
+    "url": "git+https://github.com/internetarchive/iaux-iaux-account-settings.git"
   },
   "license": "AGPL-3.0-only",
   "author": "Internet Archive",
@@ -25,6 +25,12 @@
     "ghpages:generate": "gh-pages -t -d ghpages -m \"Build for $(git log --pretty=format:\"%h %an %ai %s\" -n1) [skip ci]\""
   },
   "types": "dist/index.d.ts",
+  "dependencies": {
+    "@internetarchive/ia-activity-indicator": "^0.0.4",
+    "lit": "^2.6.0",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  },
   "devDependencies": {
     "@open-wc/eslint-config": "^9.0.0",
     "@open-wc/testing": "^3.1.6",
@@ -95,8 +101,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "dependencies": {
-    "lit": "^2.6.0"
   }
 }

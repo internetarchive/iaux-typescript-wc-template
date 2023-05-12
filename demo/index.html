@@ -2,6 +2,8 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     html {
       font-size: 10px; /* This is to match petabox's base font size */
@@ -10,12 +12,41 @@
     body {
       background: #fafafa;
     }
+
+    ia-account-settings {
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <app-root></app-root>
+  <div id="demo">
+  </div>
+  <script type="module">
+    // import { html, render } from 'https://cdn.jsdelivr.net/npm/lit-element@3.3.2/+esm';
+    // import { html, css, render } from '../node_modules/lit/index.js';
+    import {html, render} from 'https://unpkg.com/lit-html?module';
 
-  <script type="module" src="../dist/demo/app-root.js">
+
+    import '../dist/index.js';
+
+    render(
+      html`<ia-account-settings
+        .userData=${{
+          screenname: 'neeraj-archive',
+          email: 'neeraj@archive.org',
+          password: '*******',
+          isAdmin: true,
+        }}
+        .newsletterData=${{
+          ml_events: true,
+          ml_donors: true
+        }}
+        .loanHistoryFlag=${'public'}
+      >
+      </ia-account-settings>`,
+
+      document.querySelector('#demo')
+    )
   </script>
 </body>
 </html>

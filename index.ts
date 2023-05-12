@@ -1,1 +1,1 @@
-export { YourWebComponent } from './src/your-webcomponent';
+export { IAAccountSettings } from './src/ia-account-settings';
