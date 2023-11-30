@@ -1,7 +1,0 @@
-{
-  "index.html": {
-    "file": "app-root.js",
-    "src": "index.html",
-    "isEntry": true
-  }
-}
