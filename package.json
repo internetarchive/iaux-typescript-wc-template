@@ -46,7 +46,7 @@
     "madge": "^6.0.0",
     "prettier": "^2.7.1",
     "rimraf": "^5.0.0",
-    "sinon": "^16.0.0",
+    "sinon": "^17.0.0",
     "ts-lit-plugin": "^2.0.0",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
