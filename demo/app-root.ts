@@ -1,5 +1,5 @@
-import { html, css, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { html, css, LitElement } from 'https://offshoot.ux.archive.org/lit.js';
+import { customElement } from 'https://offshoot.ux.archive.org/lit/decorators.js';
 import '../src/your-webcomponent';
 
 @customElement('app-root')
