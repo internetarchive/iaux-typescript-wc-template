@@ -45,7 +45,7 @@
     "gh-pages": "^6.0.0",
     "husky": "^9.0.0",
     "madge": "^6.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "rimraf": "^5.0.0",
     "sinon": "^17.0.0",
     "ts-lit-plugin": "^2.0.0",
