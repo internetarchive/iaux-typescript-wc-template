@@ -15,12 +15,16 @@
     "inlineSources": true,
     "rootDir": "./",
     "declaration": true,
-    "importsNotUsedAsValues": "error",
     "plugins": [
       {
         "name": "ts-lit-plugin"
       }
+    ],
+    "paths": {
+      "rollup/parseAst": [
+        "./node_modules/rollup/dist/parseAst"
     ]
+}
   },
   "include": ["**/*.ts"]
 }
