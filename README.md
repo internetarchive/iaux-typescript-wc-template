@@ -38,6 +38,7 @@ yarn run test:watch
 ### Releasing alpha and test packages
 - Use your Jira ticket to create your namespace.  This will prevent collision as many people can be simultaneously working in the same repository.
   - run: **`npm version prerelease --preid=wedev-1234`**
+    - this command will help auto-increment your alpha package tags inside your jira ticket namespace. refer to [npm versioning docs](https://docs.npmjs.com/cli/v11/commands/npm-version) & [guides for more info on command options](- this command will help auto-increment your alpha package tags inside your jira ticket namespace)
   - run: **`npm publish --tag alpha`** our most used development tags are: alpha, canary
     - this command will help auto-increment your alpha package tags inside your jira ticket namespace
  
