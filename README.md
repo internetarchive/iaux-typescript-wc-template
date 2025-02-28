@@ -34,6 +34,13 @@ To run the tests in watch mode (for &lt;abbr title=&#34;test driven development&
 yarn run test:watch
 ```
 
+## Releasing package
+We use NPM conventions to release a package
+- `git pull --tags` to fetch all git tags
+- `npm version X.X.X` to set the new tag WITH the commit git tagged
+- `git push --tags`
+- `npm publish`
+
 ## Linting with ESLint, Prettier, and Types
 To scan the project for linting errors, run
 ```bash
