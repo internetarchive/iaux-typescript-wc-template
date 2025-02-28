@@ -1,0 +1,9 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "webdev-*",
+      "prerelease": true
+    }
+  ]
+}
