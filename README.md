@@ -40,7 +40,6 @@ yarn run test:watch
   - run: **`npm version prerelease --preid=wedev-1234`**
     - this command will help auto-increment your alpha package tags inside your jira ticket namespace. refer to [npm versioning docs](https://docs.npmjs.com/cli/v11/commands/npm-version) & [guides for more info on command options](- this command will help auto-increment your alpha package tags inside your jira ticket namespace)
   - run: **`npm publish --tag alpha`** our most used development tags are: alpha, canary
-    - this command will help auto-increment your alpha package tags inside your jira ticket namespace
  
 ### Releasing production level package
 We like to create a pull request specifically after the expected changes are merged into the main branch.
