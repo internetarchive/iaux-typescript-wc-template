@@ -34,12 +34,19 @@ To run the tests in watch mode (for &lt;abbr title=&#34;test driven development&
 yarn run test:watch
 ```
 
-## Releasing package
-We use NPM conventions to release a package
-- `git pull --tags` to fetch all git tags
-- `npm version X.X.X` to set the new tag WITH the commit git tagged
-- `git push --tags`
-- `npm publish`
+## Releasing alpha and production tagged packages to NPM
+### Releasing alpha and test packages to npm
+- Use your Jira ticket to create your namespace.  This will prevent collision as many people can be simultaneously working in the same repository.
+  - run: **`npm version prerelease --preid=wedev-1234`**
+    - this command will help auto-increment your alpha package tags inside your jira ticket namespace
+ 
+### Releasing production level package to NPM
+We use NPM conventions to release a package, in this order, run the commands:
+1. **`git pull --tags`** to fetch all git tags
+2. **`npm version X.X.X`** to set the new tag WITH the commit git tagged
+3. **`git push --tags`**
+4. **`npm publish`**
+- Note: version numbers must start at 1.x.x in order for consumers to automatically receive patch updates (no tags starting with 0, like 0.x.x)
 
 ## Linting with ESLint, Prettier, and Types
 To scan the project for linting errors, run
