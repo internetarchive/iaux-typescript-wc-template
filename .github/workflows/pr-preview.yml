@@ -37,7 +37,6 @@ jobs:
           comment: false
         
       - uses: marocchino/sticky-pull-request-comment@v2
-        if: env.deployment_status == 'success'
         with:
           header: pr-preview
           message: |
