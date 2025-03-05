@@ -33,3 +33,4 @@ jobs:
         with:
           source-dir: ./ghpages/
           umbrella-dir: pr
+          pages-base-path: /demo/
