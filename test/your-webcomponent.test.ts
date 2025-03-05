@@ -6,7 +6,7 @@ import '../src/your-webcomponent';
 describe('YourWebComponent', () => {
   it('has a default title "Hey there" and counter 5', async () => {
     const el = await fixture<YourWebComponent>(
-      html`<your-webcomponent></your-webcomponent>`
+      html`<your-webcomponent></your-webcomponent>`,
     );
 
     expect(el.title).to.equal('Hey there');
@@ -15,7 +15,7 @@ describe('YourWebComponent', () => {
 
   it('increases the counter on button click', async () => {
     const el = await fixture<YourWebComponent>(
-      html`<your-webcomponent></your-webcomponent>`
+      html`<your-webcomponent></your-webcomponent>`,
     );
     el.shadowRoot!.querySelector('button')!.click();
 
@@ -24,7 +24,7 @@ describe('YourWebComponent', () => {
 
   it('can override the title via attribute', async () => {
     const el = await fixture<YourWebComponent>(
-      html`<your-webcomponent title="attribute title"></your-webcomponent>`
+      html`<your-webcomponent title="attribute title"></your-webcomponent>`,
     );
 
     expect(el.title).to.equal('attribute title');
@@ -32,7 +32,7 @@ describe('YourWebComponent', () => {
 
   it('passes the a11y audit', async () => {
     const el = await fixture<YourWebComponent>(
-      html`<your-webcomponent></your-webcomponent>`
+      html`<your-webcomponent></your-webcomponent>`,
     );
 
     await expect(el).shadowDom.to.be.accessible();
