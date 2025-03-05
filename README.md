@@ -15,7 +15,7 @@ This is a base template for creating Typescript WebComponents. It is based off o
 3. `README.md` (this file). Update the readme in general, but also the badge URLs
 4. `package.json` Update the name and description
 5. Rename the `your-webcomponent.ts` and its associated `.test` file
-6. Enable `renovate` in the GitHub Apps section if not already enabled
+6. Enable `Codecov` and `renovate` in the GitHub Apps section if not already enabled (be sure not to enable `pre-commit`)
 7. Set up a Codecov token (see [Codecov Setup](#codecov-setup))
 
 ## Local Demo with `web-dev-server`
