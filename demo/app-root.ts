@@ -6,6 +6,8 @@ import '../src/your-webcomponent';
 export class AppRoot extends LitElement {
   render() {
     return html`
+      <h1>Test</h1>
+
       <your-webcomponent title="Hello">
         <div slot="my-slot">Some slotted content</div>
       </your-webcomponent>
