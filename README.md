@@ -20,7 +20,7 @@ This is a base template for creating Typescript WebComponents. It is based off o
 
 ## Local Demo with `web-dev-server`
 ```bash
-npm start
+npm run start
 ```
 To run a local development server that serves the basic demo located in `demo/index.html`
 
@@ -42,12 +42,12 @@ npm run test:watch
   - run: **`npm version prerelease --preid=wedev-1234`**
     - this command will help auto-increment your alpha package tags inside your jira ticket namespace. refer to [npm versioning docs](https://docs.npmjs.com/cli/v11/commands/npm-version) & [guides for more info on command options](- this command will help auto-increment your alpha package tags inside your jira ticket namespace)
   - run: **`npm publish --tag alpha`** our most used development tags are: alpha, canary
- 
+
 ### Releasing production level package
 We like to create a pull request specifically after the expected changes are merged into the main branch.
 Steps:
 - create PR with version number as branch name. Ex, if the next version is 3.2.1, your git command will be:  `git checkout -b v3.2.1`
-  - in the new branch, run the following: 
+  - in the new branch, run the following:
     1. **`git pull --tags`** to fetch all git tags
     2. **`npm version X.X.X`** to set the new tag WITH the commit git tagged
     3. **`git push --tags`**
