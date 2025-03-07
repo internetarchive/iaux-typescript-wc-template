@@ -7,6 +7,10 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   nodeResolve: true,
   open: '/demo',
   watch: !hmr,
+  sslCert: './ssl/server.crt',
+  sslKey: './ssl/server.key',
+  hostname: 'local.archive.org',
+  http2: true,
 
   /** Compile JS for older browsers. Requires @web/dev-server-esbuild plugin */
   // esbuildTarget: 'auto'

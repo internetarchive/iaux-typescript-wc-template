@@ -19,6 +19,8 @@ This is a base template for creating Typescript WebComponents. It is based off o
 7. Set up a Codecov token (see [Codecov Setup](#codecov-setup))
 
 ## Local Demo with `web-dev-server`
+Add `127.0.0.1 local.archive.org` to your `/etc/hosts` file
+
 ```bash
 npm run start
 ```
