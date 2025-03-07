@@ -24,8 +24,8 @@ jobs:
 
       - name: Install and Build
         run: |
-          yarn install
-          yarn ghpages:build
+          npm install
+          npm ghpages:build
 
       # Reference: https://github.com/rossjrw/pr-preview-action
       - name: Deploy preview
