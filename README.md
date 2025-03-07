@@ -24,6 +24,9 @@ Add `127.0.0.1 local.archive.org` to your `/etc/hosts` file
 ```bash
 npm run start
 ```
+
+**NOTE** The first time you visit the site, the browser will say the site is insecure because it's using a self-signed certificate. Accept the certificate and visit the site and the browser will then accept the certificate in the future. It may always say the site is insecure, but for the purposes of development, it's secure enough.
+
 To run a local development server that serves the basic demo located in `demo/index.html`
 
 ## Testing with Web Test Runner
