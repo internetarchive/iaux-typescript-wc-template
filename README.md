@@ -20,20 +20,20 @@ This is a base template for creating Typescript WebComponents. It is based off o
 
 ## Local Demo with `web-dev-server`
 ```bash
-yarn start
+npm run start
 ```
 To run a local development server that serves the basic demo located in `demo/index.html`
 
 ## Testing with Web Test Runner
 To run the suite of Web Test Runner tests, run
 ```bash
-yarn run test
+npm run test
 ```
 
 To run the tests in watch mode (for &lt;abbr title=&#34;test driven development&#34;&gt;TDD&lt;/abbr&gt;, for example), run
 
 ```bash
-yarn run test:watch
+npm run test:watch
 ```
 
 ## Releasing alpha and production tagged packages to NPM
@@ -42,12 +42,12 @@ yarn run test:watch
   - run: **`npm version prerelease --preid=wedev-1234`**
     - this command will help auto-increment your alpha package tags inside your jira ticket namespace. refer to [npm versioning docs](https://docs.npmjs.com/cli/v11/commands/npm-version) & [guides for more info on command options](- this command will help auto-increment your alpha package tags inside your jira ticket namespace)
   - run: **`npm publish --tag alpha`** our most used development tags are: alpha, canary
- 
+
 ### Releasing production level package
 We like to create a pull request specifically after the expected changes are merged into the main branch.
 Steps:
 - create PR with version number as branch name. Ex, if the next version is 3.2.1, your git command will be:  `git checkout -b v3.2.1`
-  - in the new branch, run the following: 
+  - in the new branch, run the following:
     1. **`git pull --tags`** to fetch all git tags
     2. **`npm version X.X.X`** to set the new tag WITH the commit git tagged
     3. **`git push --tags`**
@@ -57,28 +57,28 @@ Steps:
 ## Linting with ESLint, Prettier, and Types
 To scan the project for linting errors, run
 ```bash
-yarn run lint
+npm run lint
 ```
 
 You can lint with ESLint and Prettier individually as well
 ```bash
-yarn run lint:eslint
+npm run lint:eslint
 ```
 ```bash
-yarn run lint:prettier
+npm run lint:prettier
 ```
 
 To automatically fix many linting errors, run
 ```bash
-yarn run format
+npm run format
 ```
 
 You can format using ESLint and Prettier individually as well
 ```bash
-yarn run format:eslint
+npm run format:eslint
 ```
 ```bash
-yarn run format:prettier
+npm run format:prettier
 ```
 
 ## Tooling configs
@@ -119,9 +119,9 @@ git commit --allow-empty -m "Initializing gh-pages branch"
 git push origin gh-pages
 ```
 
-### Additional setup 
+### Additional setup
 
-- Go to repo `Settings` -> sidebar `Pages` 
+- Go to repo `Settings` -> sidebar `Pages`
 - In the `Source` drop-down, choose the branch where you want to host your Github Pages and the `directory` where it was hosted
   - We'll use `gh-pages` branch for this but you can use other branch name for this
   - Just make sure that's the branch where the `index.html` that you want to host lives in
@@ -134,17 +134,17 @@ git push origin gh-pages
 
 You can update the current Github Page without pushing a commit by running:
 ```
-yarn run ghpages:publish
+npm run ghpages:publish
 ```
 
 This build script does the following, see `package.json`:
-- `ghpages:publish` 
+- `ghpages:publish`
   - This executes `ghpages:prepare` in the current branch you are currently working on
-    - Note: The branch name is required so that it will not override the whole Github Pages directory 
+    - Note: The branch name is required so that it will not override the whole Github Pages directory
   - You can check it by navigating through the branch name files directory you set from the [step to setup `gh-pages` branch](#steps-to-setup-gh-pages)
     - You can checkout how it looks like in one of our projects here: [https://github.com/internetarchive/iaux-collection-browser/tree/gh-pages](https://github.com/internetarchive/iaux-collection-browser/tree/gh-pages)
- 
-- `ghpages:prepare` 
+
+- `ghpages:prepare`
   - This executes `ghpages:build` that builds the project dependencies and generates `vite` build from it
   - We use [vite](https://vitejs.dev/) to bundle and generate the static assets that we host in Github Pages
     - See `vite.config.ts` related to this
@@ -155,7 +155,7 @@ This build script does the following, see `package.json`:
     - This generates a commit message formatted from the most recent commit message of the branch
     - Push the commit to `gh-pages` branch that we setup earlier
 
-The live demo app URL from current branch will look something like this: 
+The live demo app URL from current branch will look something like this:
 `https://<organization_name_or_username>.github.io/<repo_name>/<branch_name>/demo`
 
 ## Automatic Deploy of Demo App
@@ -168,11 +168,11 @@ Things that trigger automatic site generation:
 - a pull request against `main`
   - See workflow: `pr-preview.yml`
     - The URL for your Pull Request will be deleted after merging to main but you can update that in the config
-  - When you create a Pull Request, if your code passes codecov unit tests, it will be always served live at base URL/pull request number. 
+  - When you create a Pull Request, if your code passes codecov unit tests, it will be always served live at base URL/pull request number.
   - Example: `https://<organization_name_or_username>.github.io/<repo_name>/pr/<pr-number>/demo`
     - Note that `demo` is another directory where the `index.html` lives in
     - You are free to playaround with it and set your desired file directory/structure on your end
 
-Another thing to note: pushing a branch up alone will not trigger site creation. 
+Another thing to note: pushing a branch up alone will not trigger site creation.
 
-Happy devving ^_^ 🥳  🎉 
+Happy devving ^_^ 🥳  🎉

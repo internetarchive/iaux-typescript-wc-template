@@ -13,12 +13,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
+      with:
+        node-version: latest
 
     - name: Install dependencies
-      run: yarn install
+      run: npm install
 
     - name: Run tests
-      run: yarn run test
+      run: npm run test
 
     - uses: codecov/codecov-action@v5
       with:
