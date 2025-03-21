@@ -4,7 +4,7 @@ import { resolve } from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  root: resolve(__dirname, './demo'),
+  root: resolve(__dirname, './docs/demo'),
   build: {
     /**
      * This is the directory where the built files will be placed
@@ -15,7 +15,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'demo/index.html'),
+        main: resolve(__dirname, 'docs/demo/index.html'),
       },
       output: {
         entryFileNames: 'app-root.js',
