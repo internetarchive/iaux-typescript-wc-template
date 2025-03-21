@@ -1,0 +1,183 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@internetarchive/your-webcomponent</title><meta name="description" content="Documentation for @internetarchive/your-webcomponent"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><a href="index.html" class="title">@internetarchive/your-webcomponent</a><div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/><ul role="listbox" id="tsd-search-results"></ul><div id="tsd-search-status" aria-live="polite" aria-atomic="true"><div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>@internetarchive/your-webcomponent</h1></div><div class="tsd-panel tsd-typography"><p><img src="https://github.com/internetarchive/iaux-typescript-wc-template/actions/workflows/ci.yml/badge.svg" alt="Build Status"> <a href="https://codecov.io/gh/internetarchive/iaux-typescript-wc-template"><img src="https://codecov.io/gh/internetarchive/iaux-typescript-wc-template/graph/badge.svg?token=ZOYRJ2BV9W" alt="codecov"></a></p>
+<h1 id="internet-archive-typescript-webcomponent-template" class="tsd-anchor-link">Internet Archive Typescript WebComponent Template<a href="#internet-archive-typescript-webcomponent-template" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>This is a base template for creating Typescript WebComponents. It is based off of the <a href="https://open-wc.org/docs/development/generator/">Open WebComponents generator</a> with some IA-specific customizations and some development niceities.</p>
+<h2 id="usage" class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ol>
+<li>Click the &quot;Use this Template&quot; button in GitHub to create a new repository based on this one.</li>
+<li>Clone your new repo and update the things below:</li>
+</ol>
+<h3 id="things-to-update-in-your-copy" class="tsd-anchor-link">Things to update in your copy<a href="#things-to-update-in-your-copy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ol>
+<li>Remove this section</li>
+<li>Search for the strings <code>your-webcomponent</code> and <code>YourWebComponent</code> and those are most of the spots that need to be updated.</li>
+<li><code>README.md</code> (this file). Update the readme in general, but also the badge URLs</li>
+<li><code>package.json</code> Update the name and description</li>
+<li>Rename the <code>your-webcomponent.ts</code> and its associated <code>.test</code> file</li>
+<li>Enable <code>Codecov</code> and <code>renovate</code> in the GitHub Apps section if not already enabled (be sure not to enable <code>pre-commit</code>)</li>
+<li>Set up a Codecov token (see <a href="#codecov-setup">Codecov Setup</a>)</li>
+</ol>
+<h2 id="local-demo-with-web-dev-server" class="tsd-anchor-link">Local Demo with <code>web-dev-server</code><a href="#local-demo-with-web-dev-server" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Add <code>127.0.0.1 local.archive.org</code> to your <code>/etc/hosts</code> file</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">start</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>NOTE</strong> The first time you visit the site, the browser will say the site is insecure because it's using a self-signed certificate. Accept the certificate and visit the site and the browser will then accept the certificate in the future. It may always say the site is insecure, but for the purposes of development, it's secure enough.</p>
+<p>To run a local development server that serves the basic demo located in <code>demo/index.html</code></p>
+<h2 id="testing-with-web-test-runner" class="tsd-anchor-link">Testing with Web Test Runner<a href="#testing-with-web-test-runner" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To run the suite of Web Test Runner tests, run</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">test</span>
+</code><button type="button">Copy</button></pre>
+
+<p>To run the tests in watch mode (for &lt;abbr title=&quot;test driven development&quot;&gt;TDD&lt;/abbr&gt;, for example), run</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">test:watch</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="releasing-alpha-and-production-tagged-packages-to-npm" class="tsd-anchor-link">Releasing alpha and production tagged packages to NPM<a href="#releasing-alpha-and-production-tagged-packages-to-npm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><h3 id="releasing-alpha-and-test-packages" class="tsd-anchor-link">Releasing alpha and test packages<a href="#releasing-alpha-and-test-packages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>Use your Jira ticket to create your namespace.  This will prevent collision as many people can be simultaneously working in the same repository.
+<ul>
+<li>run: <strong><code>npm version prerelease --preid=wedev-1234</code></strong>
+<ul>
+<li>this command will help auto-increment your alpha package tags inside your jira ticket namespace. refer to <a href="https://docs.npmjs.com/cli/v11/commands/npm-version">npm versioning docs</a> &amp; [guides for more info on command options](- this command will help auto-increment your alpha package tags inside your jira ticket namespace)</li>
+</ul>
+</li>
+<li>run: <strong><code>npm publish --tag alpha</code></strong> our most used development tags are: alpha, canary</li>
+</ul>
+</li>
+</ul>
+<h3 id="releasing-production-level-package" class="tsd-anchor-link">Releasing production level package<a href="#releasing-production-level-package" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>We like to create a pull request specifically after the expected changes are merged into the main branch.
+Steps:</p>
+<ul>
+<li>create PR with version number as branch name. Ex, if the next version is 3.2.1, your git command will be:  <code>git checkout -b v3.2.1</code>
+<ul>
+<li>in the new branch, run the following:
+<ol>
+<li><strong><code>git pull --tags</code></strong> to fetch all git tags</li>
+<li><strong><code>npm version X.X.X</code></strong> to set the new tag WITH the commit git tagged</li>
+<li><strong><code>git push --tags</code></strong></li>
+<li><strong><code>npm publish</code></strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Note: version numbers must start at minimum, with 1 (1.x.x) in order for consumers to automatically receive patch updates (no tags starting with 0, like 0.x.x)</li>
+</ul>
+<h2 id="linting-with-eslint-prettier-and-types" class="tsd-anchor-link">Linting with ESLint, Prettier, and Types<a href="#linting-with-eslint-prettier-and-types" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To scan the project for linting errors, run</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">lint</span>
+</code><button type="button">Copy</button></pre>
+
+<p>To automatically fix many linting errors, run</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">format</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="tooling-configs" class="tsd-anchor-link">Tooling configs<a href="#tooling-configs" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>For most of the tools, the configuration is in the <code>package.json</code> to reduce the amount of files in your project.</p>
+<p>If you customize the configuration a lot, you can consider moving them to individual files.</p>
+<h3 id="codecov-setup" class="tsd-anchor-link">Codecov setup<a href="#codecov-setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><strong>Finding your token</strong></p>
+<ul>
+<li>Log in at <a href="https://codecov.io/">https://codecov.io/</a> with your GitHub account</li>
+<li>Switch from your personal organization to <code>internetarchive</code> if needed, by toggling at the top of the screen or visiting <a href="https://app.codecov.io/gh/internetarchive">https://app.codecov.io/gh/internetarchive</a> directly</li>
+<li>Find your repository and hit the <code>Configure</code> button or visit <code>https://app.codecov.io/gh/internetarchive/YOUR-REPO-NAME/config</code></li>
+<li>Go the <code>General</code> tab and find the <code>Tokens</code> section</li>
+<li>Copy everything after <code>CODECOV_TOKEN=</code></li>
+</ul>
+<p><strong>Adding your token</strong></p>
+<ul>
+<li>Return to your repository and go to <code>Settings</code> &gt; <code>Secrets and variables</code> (under <code>Security</code>) &gt; <code>Actions</code></li>
+<li>Select <code>New repository secret</code></li>
+<li>Name your secret <code>CODECOV_TOKEN</code> and paste in the token you just copied</li>
+<li>Select <code>Add Secret</code></li>
+</ul>
+<p><strong>Adding your badge</strong></p>
+<ul>
+<li>Back in <code>Configuration</code> in Codecov, go to the <code>Badges &amp; Graphs</code> section</li>
+<li>Copy the Markdown version of the badge</li>
+<li>Delete the current Codecov badge at the top of this README and replace it with your new badge</li>
+</ul>
+<h2 id="steps-to-setup-gh-pages-static-site-generator" class="tsd-anchor-link">Steps to setup <code>gh-pages</code> static site generator<a href="#steps-to-setup-gh-pages-static-site-generator" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Let's start with creating a <code>gh-pages</code> branch.</p>
+<p>This branch is where Github will look for the <code>index.html</code> to be hosted</p>
+<pre><code><span class="hl-3">git</span><span class="hl-1"> </span><span class="hl-3">checkout</span><span class="hl-1"> --</span><span class="hl-3">orphan</span><span class="hl-1"> </span><span class="hl-3">gh</span><span class="hl-1">-</span><span class="hl-3">pages</span><br/><span class="hl-3">git</span><span class="hl-1"> </span><span class="hl-3">reset</span><span class="hl-1"> --</span><span class="hl-3">hard</span><br/><span class="hl-3">git</span><span class="hl-1"> </span><span class="hl-3">commit</span><span class="hl-1"> --</span><span class="hl-3">allow</span><span class="hl-1">-</span><span class="hl-3">empty</span><span class="hl-1"> -</span><span class="hl-3">m</span><span class="hl-1"> </span><span class="hl-2">&quot;Initializing gh-pages branch&quot;</span><br/><span class="hl-3">git</span><span class="hl-1"> </span><span class="hl-3">push</span><span class="hl-1"> </span><span class="hl-3">origin</span><span class="hl-1"> </span><span class="hl-3">gh</span><span class="hl-1">-</span><span class="hl-3">pages</span>
+</code><button>Copy</button></pre>
+
+<h3 id="additional-setup" class="tsd-anchor-link">Additional setup<a href="#additional-setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>Go to repo <code>Settings</code> -&gt; sidebar <code>Pages</code></li>
+<li>In the <code>Source</code> drop-down, choose the branch where you want to host your Github Pages and the <code>directory</code> where it was hosted
+<ul>
+<li>We'll use <code>gh-pages</code> branch for this but you can use other branch name for this</li>
+<li>Just make sure that's the branch where the <code>index.html</code> that you want to host lives in</li>
+</ul>
+</li>
+</ul>
+<p align="center">
+  <img src="media/gh-pages-settings.png" alt="Github Pages Settings" style="height:720px; width:890px;">
+</p>
+<h2 id="manual-deploy-using-gh-pages" class="tsd-anchor-link">Manual Deploy using <code>gh-pages</code><a href="#manual-deploy-using-gh-pages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>You can update the current Github Page without pushing a commit by running:</p>
+<pre><code><span class="hl-3">npm</span><span class="hl-1"> </span><span class="hl-3">run</span><span class="hl-1"> </span><span class="hl-4">ghpages</span><span class="hl-1">:</span><span class="hl-3">publish</span>
+</code><button>Copy</button></pre>
+
+<p>This build script does the following, see <code>package.json</code>:</p>
+<ul>
+<li>
+<p><code>ghpages:publish</code></p>
+<ul>
+<li>This executes <code>ghpages:prepare</code> in the current branch you are currently working on
+<ul>
+<li>Note: The branch name is required so that it will not override the whole Github Pages directory</li>
+</ul>
+</li>
+<li>You can check it by navigating through the branch name files directory you set from the <a href="#steps-to-setup-gh-pages">step to setup <code>gh-pages</code> branch</a>
+<ul>
+<li>You can checkout how it looks like in one of our projects here: <a href="https://github.com/internetarchive/iaux-collection-browser/tree/gh-pages">https://github.com/internetarchive/iaux-collection-browser/tree/gh-pages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>ghpages:prepare</code></p>
+<ul>
+<li>This executes <code>ghpages:build</code> that builds the project dependencies and generates <code>vite</code> build from it</li>
+<li>We use <a href="https://vitejs.dev/">vite</a> to bundle and generate the static assets that we host in Github Pages
+<ul>
+<li>See <code>vite.config.ts</code> related to this</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>ghpages:generate</code></p>
+<ul>
+<li>This executes <code>gh-pages</code> <a href="https://www.npmjs.com/package/gh-pages">npm package</a> command to publish/upload the generated files from our <code>vite</code> build files</li>
+<li>Upon executing this command:
+<ul>
+<li>This generates a commit message formatted from the most recent commit message of the branch</li>
+<li>Push the commit to <code>gh-pages</code> branch that we setup earlier</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The live demo app URL from current branch will look something like this:
+<code>https://&lt;organization_name_or_username&gt;.github.io/&lt;repo_name&gt;/&lt;branch_name&gt;/demo</code></p>
+<h2 id="automatic-deploy-of-demo-app" class="tsd-anchor-link">Automatic Deploy of Demo App<a href="#automatic-deploy-of-demo-app" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Things that trigger automatic site generation:</p>
+<ul>
+<li>
+<p>a merge to <code>main</code></p>
+<ul>
+<li>See workflow: <code>gh-pages-main.yml</code></li>
+<li>Example: <code>https://&lt;organization_name_or_username&gt;.github.io/&lt;repo_name&gt;/main</code></li>
+</ul>
+</li>
+<li>
+<p>a pull request against <code>main</code></p>
+<ul>
+<li>See workflow: <code>pr-preview.yml</code>
+<ul>
+<li>The URL for your Pull Request will be deleted after merging to main but you can update that in the config</li>
+</ul>
+</li>
+<li>When you create a Pull Request, if your code passes codecov unit tests, it will be always served live at base URL/pull request number.</li>
+<li>Example: <code>https://&lt;organization_name_or_username&gt;.github.io/&lt;repo_name&gt;/pr/&lt;pr-number&gt;/demo</code>
+<ul>
+<li>Note that <code>demo</code> is another directory where the <code>index.html</code> lives in</li>
+<li>You are free to playaround with it and set your desired file directory/structure on your end</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Another thing to note: pushing a branch up alone will not trigger site creation.</p>
+<p>Happy devving ^_^ 🥳  🎉</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg><h3>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#internet-archive-typescript-webcomponent-template"><span>Internet <wbr/>Archive <wbr/>Typescript <wbr/>Web<wbr/>Component <wbr/>Template</span></a><ul><li><a href="#usage"><span>Usage</span></a></li><li><ul><li><a href="#things-to-update-in-your-copy"><span>Things to update in your copy</span></a></li></ul></li><li><a href="#local-demo-with-web-dev-server"><span>Local <wbr/>Demo with web-<wbr/>dev-<wbr/>server</span></a></li><li><a href="#testing-with-web-test-runner"><span>Testing with <wbr/>Web <wbr/>Test <wbr/>Runner</span></a></li><li><a href="#releasing-alpha-and-production-tagged-packages-to-npm"><span>Releasing alpha and production tagged packages to NPM</span></a></li><li><ul><li><a href="#releasing-alpha-and-test-packages"><span>Releasing alpha and test packages</span></a></li><li><a href="#releasing-production-level-package"><span>Releasing production level package</span></a></li></ul></li><li><a href="#linting-with-eslint-prettier-and-types"><span>Linting with ESLint, <wbr/>Prettier, and <wbr/>Types</span></a></li><li><a href="#tooling-configs"><span>Tooling configs</span></a></li><li><ul><li><a href="#codecov-setup"><span>Codecov setup</span></a></li></ul></li><li><a href="#steps-to-setup-gh-pages-static-site-generator"><span>Steps to setup gh-<wbr/>pages static site generator</span></a></li><li><ul><li><a href="#additional-setup"><span>Additional setup</span></a></li></ul></li><li><a href="#manual-deploy-using-gh-pages"><span>Manual <wbr/>Deploy using gh-<wbr/>pages</span></a></li><li><a href="#automatic-deploy-of-demo-app"><span>Automatic <wbr/>Deploy of <wbr/>Demo <wbr/>App</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html">@internetarchive/your-webcomponent</a><ul class="tsd-small-nested-navigation" id="tsd-nav-container"><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
