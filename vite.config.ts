@@ -10,7 +10,7 @@ export default defineConfig({
      * This is the directory where the built files will be placed
      * that we upload to GitHub Pages.
      */
-    outDir: '../ghpages/demo',
+    outDir: '../../ghpages/demo',
     emptyOutDir: true,
     manifest: true,
     rollupOptions: {
