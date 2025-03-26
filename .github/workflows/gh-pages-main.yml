@@ -3,6 +3,8 @@
 # This workflow will run every time new changes were pushed to the `main` branch
 
 name: App build CI/CD to main branch
+permissions:
+  contents: write
 
 on:
   push:
@@ -36,4 +38,3 @@ jobs:
           clean-exclude: pr/
           force: false
           target-folder: main
-          token: ${{ secrets.GH_TOKEN }}
