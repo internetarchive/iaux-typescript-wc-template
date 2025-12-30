@@ -1,4 +1,4 @@
-import { html, fixture, expect } from '@open-wc/testing';
+import { html, fixture, expect, oneEvent } from '@open-wc/testing';
 
 import type { YourWebComponent } from '../src/your-webcomponent';
 import '../src/your-webcomponent';
@@ -20,6 +20,19 @@ describe('YourWebComponent', () => {
     el.shadowRoot!.querySelector('button')!.click();
 
     expect(el.counter).to.equal(6);
+  });
+
+  it('emits an event with the counter value when incrementing', async () => {
+    const el = await fixture<YourWebComponent>(
+      html`<your-webcomponent></your-webcomponent>`,
+    );
+
+    const eventPromise = oneEvent(el, 'counterIncremented');
+
+    el.shadowRoot!.querySelector('button')!.click();
+
+    const { detail } = await eventPromise;
+    expect(detail.newCount).to.equal(6);
   });
 
   it('can override the title via attribute', async () => {
