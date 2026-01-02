@@ -1,6 +1,13 @@
 import { html, css, LitElement } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
+/**
+ * Custom events fired by the component
+ */
+enum Events {
+  CounterIncremented = 'counterIncremented',
+}
+
 @customElement('your-webcomponent')
 export class YourWebComponent extends LitElement {
   @property({ type: String }) title = 'Hey there';
@@ -9,6 +16,11 @@ export class YourWebComponent extends LitElement {
 
   private increment() {
     this.counter += 1;
+    this.dispatchEvent(
+      new CustomEvent(Events.CounterIncremented, {
+        detail: { newCount: this.counter },
+      }),
+    );
   }
 
   render() {
