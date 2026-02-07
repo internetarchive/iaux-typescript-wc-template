@@ -34,7 +34,7 @@
     "@web/dev-server": "^0.4.6",
     "@web/test-runner": "^0.20.0",
     "concurrently": "^9.1.2",
-    "eslint": "^9.17.0",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-import": "^2.31.0",
