@@ -1,31 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "lib": [
+      "ESNext",
+      "dom",
+      "dom.iterable"
+    ],
     "strict": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "importHelpers": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "inlineSources": true,
     "rootDir": "./",
-    "declaration": true,
     "plugins": [
       {
         "name": "ts-lit-plugin"
       }
-    ],
-    "paths": {
-      // workaround for: https://github.com/vitest-dev/vitest/issues/4567
-      "rollup/parseAst": [
-        "./node_modules/rollup/dist/parseAst"
     ]
-}
   },
   "include": ["**/*.ts"]
 }

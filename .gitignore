@@ -29,6 +29,12 @@ dist-ssr
 
 storybook-static
 
+# Vitest
+__screenshots__
+
+# Coverage
+coverage
+
 # Logs
 logs
 *.log
