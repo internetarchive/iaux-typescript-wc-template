@@ -40,3 +40,5 @@ logs
 *.log
 npm-debug.log*
 npm-error.log*
+
+.claude
