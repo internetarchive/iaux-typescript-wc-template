@@ -25,6 +25,21 @@ describe('YourWebComponent', () => {
     expect(el.counter).toBe(6);
   });
 
+  it('fires a counterIncremented event on button click', async () => {
+    const el = await fixture<YourWebComponent>(
+      html`<your-webcomponent></your-webcomponent>`,
+    );
+
+    let detail: { newCount: number } | undefined;
+    el.addEventListener('counterIncremented', ((e: CustomEvent) => {
+      detail = e.detail;
+    }) as EventListener);
+
+    el.shadowRoot!.querySelector('button')!.click();
+
+    expect(detail).toEqual({ newCount: 6 });
+  });
+
   it('can override the title via attribute', async () => {
     const el = await fixture<YourWebComponent>(
       html`<your-webcomponent title="attribute title"></your-webcomponent>`,
