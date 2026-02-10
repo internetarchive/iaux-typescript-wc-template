@@ -1,10 +1,10 @@
-import { describe, it, expect } from 'vitest';
-import { html } from 'lit';
 import axe from 'axe-core';
+import { html } from 'lit';
+import { describe, expect, it } from 'vitest';
 
-import { fixture } from './fixture';
-import type { YourWebComponent } from '../src/your-webcomponent';
 import '../src/your-webcomponent';
+import type { YourWebComponent } from '../src/your-webcomponent';
+import { fixture } from './fixture';
 
 describe('YourWebComponent', () => {
   it('has a default title "Hey there" and counter 5', async () => {
