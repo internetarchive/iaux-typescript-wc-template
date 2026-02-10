@@ -1,23 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { html, render, type TemplateResult } from 'lit';
+import { html } from 'lit';
 import axe from 'axe-core';
 
+import { fixture } from './fixture';
 import type { YourWebComponent } from '../src/your-webcomponent';
 import '../src/your-webcomponent';
-
-async function fixture<T extends HTMLElement>(
-  template: TemplateResult,
-): Promise<T> {
-  const container = document.createElement('div');
-  document.body.appendChild(container);
-  render(template, container);
-  const el = container.firstElementChild as T;
-  if ('updateComplete' in el) {
-    await (el as unknown as { updateComplete: Promise<boolean> })
-      .updateComplete;
-  }
-  return el;
-}
 
 describe('YourWebComponent', () => {
   it('has a default title "Hey there" and counter 5', async () => {

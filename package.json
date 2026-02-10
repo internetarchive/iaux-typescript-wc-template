@@ -56,6 +56,10 @@
     "singleQuote": true,
     "arrowParens": "avoid"
   },
+  "files": [
+    "README.md",
+    "dist"
+  ],
   "lint-staged": {
     "*.ts": [
       "eslint --fix",
