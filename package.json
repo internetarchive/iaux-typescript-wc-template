@@ -17,7 +17,7 @@
     "lint": "eslint . && prettier \"**/*.ts\" --check",
     "format": "eslint . --fix && prettier \"**/*.ts\" --write",
     "circular": "madge --circular --extensions ts .",
-    "test": "vitest run --coverage && npm run lint && npm run circular",
+    "test": "npm run lint && npm run circular && vitest run --coverage",
     "test:watch": "vitest",
     "ghpages:build": "npm run prepare && vite build --mode ghpages",
     "ghpages:publish": "npm run ghpages:prepare -e $(git branch --show-current)",
