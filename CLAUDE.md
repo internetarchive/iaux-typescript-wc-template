@@ -25,7 +25,9 @@ demo/                 → Dev server demo app (app-root.ts + index.html)
 dist/                 → Built library output (published to npm)
 ghpages/              → GitHub Pages build output
 .github/workflows/    → CI (ci.yml), main deploy (gh-pages-main.yml), PR preview (pr-preview.yml)
-vite.config.ts        → Vite config (library mode + ghpages mode + vitest)
+vite.config.ts          → Vite library build config (default)
+vitest.config.ts        → Vitest browser test config
+vite.ghpages.config.ts  → GitHub Pages demo build config
 tsconfig.json         → Strict TS, esnext target, bundler resolution, decorators
 tsconfig.build.json   → Declaration-only emit for dist types
 eslint.config.mjs     → ESLint flat config with typescript-eslint

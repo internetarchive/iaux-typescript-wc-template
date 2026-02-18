@@ -17,9 +17,9 @@
     "lint": "eslint . && prettier \"**/*.ts\" --check",
     "format": "eslint . --fix && prettier \"**/*.ts\" --write",
     "circular": "madge --circular --extensions ts .",
-    "test": "npm run lint && npm run circular && vitest run --coverage",
+    "test": "npm run lint && npm run circular && vitest run",
     "test:watch": "vitest",
-    "ghpages:build": "npm run prepare && vite build --mode ghpages",
+    "ghpages:build": "npm run prepare && vite build --config vite.ghpages.config.ts",
     "ghpages:publish": "npm run ghpages:prepare -e $(git branch --show-current)",
     "ghpages:prepare": "npm run ghpages:build && touch ghpages/.nojekyll && npm run ghpages:generate",
     "ghpages:generate": "gh-pages -t -d ghpages -m \"Build for $(git log --pretty=format:\"%h %an %ai %s\" -n1) [skip ci]\""
