@@ -5,6 +5,7 @@ export default defineConfig({
   base: './',
   root: resolve(__dirname, './demo'),
   build: {
+    target: 'es2022',
     outDir: '../ghpages',
     emptyOutDir: true,
     manifest: true,
