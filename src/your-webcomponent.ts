@@ -1,5 +1,5 @@
-import { html, css, LitElement } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import { css, html, LitElement } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
 /**
  * Custom events fired by the component

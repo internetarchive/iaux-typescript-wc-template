@@ -1,7 +1,10 @@
-import { html, fixture, expect, oneEvent } from '@open-wc/testing';
+import axe from 'axe-core';
+import { html } from 'lit';
+import { describe, expect, it } from 'vitest';
 
-import type { YourWebComponent } from '../src/your-webcomponent';
 import '../src/your-webcomponent';
+import type { YourWebComponent } from '../src/your-webcomponent';
+import { fixture } from './fixture';
 
 describe('YourWebComponent', () => {
   it('has a default title "Hey there" and counter 5', async () => {
@@ -9,8 +12,8 @@ describe('YourWebComponent', () => {
       html`<your-webcomponent></your-webcomponent>`,
     );
 
-    expect(el.title).to.equal('Hey there');
-    expect(el.counter).to.equal(5);
+    expect(el.title).toBe('Hey there');
+    expect(el.counter).toBe(5);
   });
 
   it('increases the counter on button click', async () => {
@@ -19,20 +22,22 @@ describe('YourWebComponent', () => {
     );
     el.shadowRoot!.querySelector('button')!.click();
 
-    expect(el.counter).to.equal(6);
+    expect(el.counter).toBe(6);
   });
 
-  it('emits an event with the counter value when incrementing', async () => {
+  it('fires a counterIncremented event on button click', async () => {
     const el = await fixture<YourWebComponent>(
       html`<your-webcomponent></your-webcomponent>`,
     );
 
-    const eventPromise = oneEvent(el, 'counterIncremented');
+    let detail: { newCount: number } | undefined;
+    el.addEventListener('counterIncremented', ((e: CustomEvent) => {
+      detail = e.detail;
+    }) as EventListener);
 
     el.shadowRoot!.querySelector('button')!.click();
 
-    const { detail } = await eventPromise;
-    expect(detail.newCount).to.equal(6);
+    expect(detail).toEqual({ newCount: 6 });
   });
 
   it('can override the title via attribute', async () => {
@@ -40,7 +45,7 @@ describe('YourWebComponent', () => {
       html`<your-webcomponent title="attribute title"></your-webcomponent>`,
     );
 
-    expect(el.title).to.equal('attribute title');
+    expect(el.title).toBe('attribute title');
   });
 
   it('passes the a11y audit', async () => {
@@ -48,6 +53,7 @@ describe('YourWebComponent', () => {
       html`<your-webcomponent></your-webcomponent>`,
     );
 
-    await expect(el).shadowDom.to.be.accessible();
+    const results = await axe.run(el);
+    expect(results.violations).toEqual([]);
   });
 });

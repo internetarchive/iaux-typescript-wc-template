@@ -29,8 +29,16 @@ dist-ssr
 
 storybook-static
 
+# Vitest
+__screenshots__
+
+# Coverage
+coverage
+
 # Logs
 logs
 *.log
 npm-debug.log*
 npm-error.log*
+
+.claude

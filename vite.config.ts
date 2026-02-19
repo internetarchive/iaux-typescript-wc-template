@@ -1,25 +1,25 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import dts from 'vite-plugin-dts';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
-  root: resolve(__dirname, './demo'),
   build: {
-    /**
-     * This is the directory where the built files will be placed
-     * that we upload to GitHub Pages.
-     */
-    outDir: '../ghpages/demo',
+    target: 'es2022',
+    lib: {
+      entry: resolve(__dirname, 'index.ts'),
+      formats: ['es'],
+      fileName: () => 'index.js',
+    },
+    outDir: 'dist',
     emptyOutDir: true,
-    manifest: true,
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'demo/index.html'),
-      },
-      output: {
-        entryFileNames: 'app-root.js',
-      },
+      external: [/^lit/, 'tslib'],
     },
   },
+  plugins: [
+    dts({
+      tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
+      outDir: 'dist',
+    }),
+  ],
 });
