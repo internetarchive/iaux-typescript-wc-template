@@ -9,7 +9,7 @@ Internet Archive TypeScript WebComponent Template — a starter template for bui
 ## Tech Stack
 
 - **Lit** (v2/v3) web components with TypeScript decorators
-- **Vite** for dev server (`npm start`) and library builds (`npm run build`)
+- **Vite** for dev server (`pnpm start`) and library builds (`pnpm run build`)
 - **Vitest** + **Playwright** (Chromium) for browser-based unit tests
 - **axe-core** for accessibility auditing in every test
 - **ESLint v10** (flat config) + **Prettier** (single quotes, no arrow parens)
@@ -37,13 +37,13 @@ eslint.config.mjs     → ESLint flat config with typescript-eslint
 
 | Command | What it does |
 |---------|-------------|
-| `npm start` | Vite dev server for the demo |
-| `npm test` | Lint → circular dep check → vitest with coverage |
-| `npm run test:watch` | Vitest in watch mode |
-| `npm run build` | Build library to `dist/` |
-| `npm run lint` | ESLint + Prettier check |
-| `npm run format` | Auto-fix lint/format issues |
-| `npm run ghpages:build` | Build demo for GitHub Pages |
+| `pnpm start` | Vite dev server for the demo |
+| `pnpm test` | Lint → circular dep check → vitest with coverage |
+| `pnpm run test:watch` | Vitest in watch mode |
+| `pnpm run build` | Build library to `dist/` |
+| `pnpm run lint` | ESLint + Prettier check |
+| `pnpm run format` | Auto-fix lint/format issues |
+| `pnpm run ghpages:build` | Build demo for GitHub Pages |
 
 ## Code Patterns
 
@@ -58,7 +58,7 @@ eslint.config.mjs     → ESLint flat config with typescript-eslint
 
 GitHub Actions on push/PR to `main`:
 1. Install deps + Playwright browsers
-2. Run full `npm test` (lint + circular + vitest + coverage)
+2. Run full `pnpm test` (lint + circular + vitest + coverage)
 3. Upload coverage to Codecov
 4. PR previews auto-deploy to GitHub Pages at `/pr/{number}/demo/`
 

@@ -8,20 +8,26 @@
   "license": "AGPL-3.0-only",
   "author": "Internet Archive",
   "version": "0.0.0",
+  "packageManager": "pnpm@11.12.0",
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11"
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
+    "preinstall": "node support/only-pnpm.cjs",
     "start": "vite serve demo",
     "prepare": "vite build",
     "build": "vite build",
     "lint": "eslint . && prettier \"**/*.ts\" --check",
     "format": "eslint . --fix && prettier \"**/*.ts\" --write",
     "circular": "madge --circular --extensions ts .",
-    "test": "npm run lint && npm run circular && vitest run",
+    "test": "pnpm run lint && pnpm run circular && vitest run",
     "test:watch": "vitest",
-    "ghpages:build": "npm run prepare && vite build --config vite.ghpages.config.ts",
-    "ghpages:publish": "npm run ghpages:prepare -e $(git branch --show-current)",
-    "ghpages:prepare": "npm run ghpages:build && touch ghpages/.nojekyll && npm run ghpages:generate",
+    "ghpages:build": "pnpm run prepare && vite build --config vite.ghpages.config.ts",
+    "ghpages:publish": "pnpm run ghpages:prepare -e $(git branch --show-current)",
+    "ghpages:prepare": "pnpm run ghpages:build && touch ghpages/.nojekyll && pnpm run ghpages:generate",
     "ghpages:generate": "gh-pages -t -d ghpages -m \"Build for $(git log --pretty=format:\"%h %an %ai %s\" -n1) [skip ci]\""
   },
   "types": "dist/index.d.ts",
@@ -66,11 +72,6 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "overrides": {
-    "typescript-eslint": {
-      "eslint": "$eslint"
-    }
   },
   "dependencies": {
     "lit": "^2.8.0 || ^3.3.2"

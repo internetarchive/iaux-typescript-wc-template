@@ -22,7 +22,7 @@ This is a base template for creating Typescript WebComponents. It is based off o
 Add `127.0.0.1 local.archive.org` to your `/etc/hosts` file
 
 ```bash
-npm run start
+pnpm start
 ```
 
 **NOTE** The first time you visit the site, the browser will say the site is insecure because it's using a self-signed certificate. Accept the certificate and visit the site and the browser will then accept the certificate in the future. It may always say the site is insecure, but for the purposes of development, it's secure enough.
@@ -32,13 +32,13 @@ To run a local development server that serves the basic demo located in `demo/in
 ## Testing with Web Test Runner
 To run the suite of Web Test Runner tests, run
 ```bash
-npm run test
+pnpm test
 ```
 
 To run the tests in watch mode (for &lt;abbr title=&#34;test driven development&#34;&gt;TDD&lt;/abbr&gt;, for example), run
 
 ```bash
-npm run test:watch
+pnpm run test:watch
 ```
 
 ## Releasing alpha and production tagged packages to NPM
@@ -62,12 +62,12 @@ Steps:
 ## Linting with ESLint, Prettier, and Types
 To scan the project for linting errors, run
 ```bash
-npm run lint
+pnpm run lint
 ```
 
 To automatically fix many linting errors, run
 ```bash
-npm run format
+pnpm run format
 ```
 
 ## Tooling configs
@@ -123,7 +123,7 @@ git push origin gh-pages
 
 You can update the current Github Page without pushing a commit by running:
 ```
-npm run ghpages:publish
+pnpm run ghpages:publish
 ```
 
 This build script does the following, see `package.json`:

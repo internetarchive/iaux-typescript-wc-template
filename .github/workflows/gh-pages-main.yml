@@ -18,16 +18,17 @@ jobs:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
           node-version: latest
-
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Create build files for gh-pages deploy
-        run: npm run ghpages:build
+        run: pnpm run ghpages:build
 
       # Reference: https://github.com/JamesIves/github-pages-deploy-action
       - name: Deploy 🚀
