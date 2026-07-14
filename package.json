@@ -16,7 +16,6 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
-    "preinstall": "node support/only-pnpm.cjs",
     "start": "vite serve demo",
     "prepare": "vite build",
     "build": "vite build",
