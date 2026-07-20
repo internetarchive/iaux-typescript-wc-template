@@ -27,6 +27,6 @@ jobs:
     - name: Run tests
       run: pnpm run test
 
-    - uses: codecov/codecov-action@v6
+    - uses: codecov/codecov-action@v7
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
