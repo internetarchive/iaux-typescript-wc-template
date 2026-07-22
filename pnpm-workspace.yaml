@@ -1,4 +1,4 @@
-nodeLinker: hoisted
+nodeLinker: isolated
 
 # Supply-chain cooldown (WEBDEV-8544): don't install a package version until it
 # has been published for at least this long, giving a compromised release time to
