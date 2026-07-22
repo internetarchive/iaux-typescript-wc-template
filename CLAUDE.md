@@ -53,6 +53,7 @@ eslint.config.mjs     → ESLint flat config with typescript-eslint
 - Custom events dispatched via `new CustomEvent(name, { detail })` with an enum for event names
 - Tests use a `fixture<T>(html\`...\`)` helper from `test/fixture.ts`
 - Every test suite includes an axe-core accessibility audit
+- `test/mocking-example.test.ts` shows Vitest mocking (`vi.fn`, `vi.spyOn`, `mockImplementation`)
 
 ## CI
 
