@@ -8,7 +8,7 @@
   "license": "AGPL-3.0-only",
   "author": "Internet Archive",
   "version": "0.0.0",
-  "packageManager": "pnpm@11.13.0",
+  "packageManager": "pnpm@11.17.0",
   "engines": {
     "node": ">=24",
     "pnpm": ">=11"
