@@ -37,6 +37,7 @@
     "@vitest/coverage-v8": "^4.1.9",
     "axe-core": "^4.12.1",
     "eslint": "^10.6.0",
+    "eslint-plugin-es-x": "^10.0.0",
     "eslint-plugin-html": "^8.1.4",
     "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
