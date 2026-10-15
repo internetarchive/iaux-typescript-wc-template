@@ -8,10 +8,10 @@
   "license": "AGPL-3.0-only",
   "author": "Internet Archive",
   "version": "0.0.0",
-  "packageManager": "pnpm@11.13.0",
+  "packageManager": "pnpm@12.4.1",
   "engines": {
     "node": ">=24",
-    "pnpm": ">=11"
+    "pnpm": ">=12"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
